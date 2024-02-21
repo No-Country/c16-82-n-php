@@ -37,41 +37,14 @@ You should also give access to the www-data user or group.
 sudo chown www-data:www-data -R ./storage
 ```
 
-## Add permissions to Sail
-
-Granting permissions to the `sail` command on the `html` folder.
-
-```bash
-sail root-shell
-cd ..
-chown -R sail:sail htm
-exit
-```
-
-## Run Autoload & Optimize
-
-```bash
-sail artisan clear-compiled 
-sail composer dump-autoload
-sail artisan optimize
-```
-
 ## Copy `.env.example` file and rename to `.env`
 
 Laravel need to use .env file to define a database connection, some general setting like application key as well.
 
-## Laravel Artisan Key Command
-
-The key:generate command is used to generate a random key. This command will update the key stored in the application's environment file.
-
-```bash
-sail artisan key:generate
-```
-
 ## Start Sail
 
-Before starting Sail, you should ensure that no other web 
-servers or databases are running on your local computer. 
+Before starting Sail, you should ensure that no other web
+servers or databases are running on your local computer.
 To start Sail you should execute the `up` command:
 
 ```bash
@@ -82,6 +55,37 @@ sail up
 
 ```bash
 sail up -d
+```
+
+## Add permissions to Sail
+
+Granting permissions to the `sail` command on the `html` folder.
+
+```bash
+sail root-shell
+cd ..
+chown -R sail:sail html
+exit
+```
+
+## Laravel Artisan Key Command
+
+The key:generate command is used to generate a random key. This command will update the key stored in the application's environment file.
+
+```bash
+sail artisan key:generate
+```
+
+## Run migrations
+
+```bash
+sail artisan migrate
+```
+
+## Run Vite
+
+```bash
+sail npm run dev
 ```
 
 ## Stop sail
