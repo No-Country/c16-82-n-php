@@ -5,13 +5,12 @@
 After cloning the repository, you need to run the `composer install` command using Docker.
 
 ```bash
-sudo docker run --rm \
---pull=always \
--u "$(id -u):$(id -g)" \
--v "$(pwd)":/opt \
--w /opt \
-composer --global config process-timeout 0 && \
-composer install --ignore-platform-reqs --no-scripts --no-plugins
+docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v "$(pwd):/var/www/html" \
+    -w /var/www/html \
+    laravelsail/php83-composer:latest \
+    composer install --ignore-platform-reqs
 ```
 
 ## Sail alias
