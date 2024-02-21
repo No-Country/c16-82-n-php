@@ -31,6 +31,7 @@ This command will give others permissions without altering user and group permis
 ```bash
 sudo chmod o+w ./storage/ -R
 ```
+
 You should also give access to the www-data user or group.
 
 ```bash
@@ -46,6 +47,14 @@ sail root-shell
 cd ..
 chown -R sail:sail htm
 exit
+```
+
+## Run Autoload & Optimize
+
+```bash
+sail artisan clear-compiled 
+sail composer dump-autoload
+sail artisan optimize
 ```
 
 ## Copy `.env.example` file and rename to `.env`
