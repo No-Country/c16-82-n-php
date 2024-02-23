@@ -82,6 +82,12 @@ sail artisan key:generate
 sail artisan migrate
 ```
 
+## Install frontend packages
+
+```bash
+sail npm install
+```
+
 ## Run Vite
 
 ```bash
