@@ -1,4 +1,4 @@
-# Backend configuration
+# Backoffice configuration
 
 ## Installation
 
